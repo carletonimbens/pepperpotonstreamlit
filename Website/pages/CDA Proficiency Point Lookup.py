@@ -19,7 +19,7 @@ st.set_page_config(
 )
 with st.sidebar:
     if LOGO.exists():
-        st.image(str(LOGO), use_column_width=True)
+        st.image(str(LOGO), use_container_width=True)
 
 # ---------- Theme & profile (no email anywhere) ----------
 try:
