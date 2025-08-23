@@ -12,9 +12,6 @@ try:
 except Exception:
     def get_prefs(uid: str): return {}
 
-with st.sidebar:
-    st.image("assets/pepperpot_wordmark.png", use_container_width=True)
-
 
 st.set_page_config(page_title="Pepperpot • Proficiency Point Lookup", layout="wide")
 
