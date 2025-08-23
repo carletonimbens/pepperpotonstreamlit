@@ -5,8 +5,6 @@ from utils.auth import DANCE_OPTIONS, COLOR_PALETTE, gen_salt, make_hash
 
 st.set_page_config(page_title="Pepperpot • My Account", layout="wide")
 
-with st.sidebar:
-    st.image("assets/pepperpot_wordmark.png", use_container_width=True)
 
 
 # ---- auth check ----
