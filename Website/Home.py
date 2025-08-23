@@ -3,11 +3,11 @@ import streamlit as st
 from utils.db import get_user, create_user, touch_user
 from utils.auth import DANCE_OPTIONS, COLOR_PALETTE, gen_salt, make_hash
 
-# Centered wordmark header
-col_logo = st.columns([1, 3, 1])[1]
-with col_logo:
-    st.image("assets/pepperpot_wordmark.png", width=420)
-
+from pathlib import Path
+LOGO = Path(__file__).resolve().parents[1] / "assets" / "pepperpot_wordmark.png"
+with st.sidebar:
+    if LOGO.exists():
+        st.image(str(LOGO), use_column_width=True)
 
 st.set_page_config(page_title="Pepperpot", layout="wide")
 st.title("Pepperpot")
