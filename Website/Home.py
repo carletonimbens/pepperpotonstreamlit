@@ -4,6 +4,25 @@ from utils.db import get_user, create_user, touch_user
 from utils.auth import DANCE_OPTIONS, COLOR_PALETTE, gen_salt, make_hash
 
 
+# --- logo + page config ---
+from pathlib import Path
+import streamlit as st
+
+APP_DIR = Path(__file__).resolve().parent              # -> Website/
+LOGO = APP_DIR / "assets" / "pepperpot_wordmark.png"   # Website/assets/pepperpot_wordmark.png
+
+st.set_page_config(
+    page_title="Pepperpot",
+    page_icon=str(LOGO) if LOGO.exists() else None,
+    layout="wide",
+)
+
+# Centered wordmark header
+if LOGO.exists():
+    mid = st.columns([1, 3, 1])[1]
+    mid.image(str(LOGO), width=420)
+
+
 def auth_ui():
     st.subheader("Sign in or create an account")
     tab_login, tab_signup = st.tabs(["Log in", "Create account"])
