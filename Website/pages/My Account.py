@@ -4,6 +4,23 @@ from utils.db import get_prefs, set_prefs, get_user, update_user_login
 from utils.auth import DANCE_OPTIONS, COLOR_PALETTE, gen_salt, make_hash
 
 st.set_page_config(page_title="Pepperpot • My Account", layout="wide")
+# --- logo + page config ---
+from pathlib import Path
+import streamlit as st
+
+APP_DIR = Path(__file__).resolve().parents[1]          # -> Website/
+LOGO = APP_DIR / "assets" / "pepperpot_wordmark.png"
+
+st.set_page_config(
+    page_title="Pepperpot • My Account",
+    page_icon=str(LOGO) if LOGO.exists() else None,
+    layout="wide",
+)
+
+# Sidebar wordmark
+with st.sidebar:
+    if LOGO.exists():
+        st.image(str(LOGO), use_container_width=True)
 
 
 
