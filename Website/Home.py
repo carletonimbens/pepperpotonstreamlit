@@ -9,15 +9,18 @@ from pathlib import Path
 import streamlit as st
 
 
-# Hide the Streamlit branding/menu/footer
-hide_streamlit_style = """
+
+# Hide Streamlit branding elements
+hide_st_style = """
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    #MainMenu {visibility: hidden;}    /* Hide hamburger menu */
+    footer {visibility: hidden;}       /* Hide "Made with Streamlit" footer */
+    header {visibility: hidden;}       /* Hide top "running on" header */
+    .stActionButton {display: none;}   /* Hide floating crown button */
     </style>
 """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 
 APP_DIR = Path(__file__).resolve().parent              # -> Website/
