@@ -8,6 +8,18 @@ from utils.auth import DANCE_OPTIONS, COLOR_PALETTE, gen_salt, make_hash
 from pathlib import Path
 import streamlit as st
 
+
+# Hide the Streamlit branding/menu/footer
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 APP_DIR = Path(__file__).resolve().parent              # -> Website/
 LOGO = APP_DIR / "assets" / "pepperpot_wordmark.png"   # Website/assets/pepperpot_wordmark.png
 
